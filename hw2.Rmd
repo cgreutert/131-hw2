@@ -1,0 +1,26 @@
+---
+title: "Homework 2: Linear Regression"
+author: "Carly Greutert"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+abalone <- read_csv('C:\\Users\\carly\\AppData\\Local\\Temp\\Temp1_homework-2.zip\\homework-2\\data\\abalone.csv')
+1. 
+```{r}
+abalone <- abalone %>% 
+mutate(age = rings + 1.5)
+abalone %>% 
+ggplot(aes(x = age))+ geom_histogram(bins = 60)
+```
+Age seems to be normally distributed, although slightly positively skewed, with 11 being roughly the mean age, although it has a few older outliers.
+2. 
+```{r}
+set.seed(111)
+abalone_split <- initial_split(abalone, prop = 0.80, strata = 'age')
+abalone_train <- training(abalone_split)
+abalone_test <- testing(abalone_split)
+```
+nj
