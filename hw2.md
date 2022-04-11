@@ -66,7 +66,7 @@ library(tidymodels)
     ## x yardstick::spec()        masks readr::spec()
     ## x yardstick::specificity() masks caret::specificity()
     ## x recipes::step()          masks stats::step()
-    ## * Learn how to get started at https://www.tidymodels.org/start/
+    ## * Use suppressPackageStartupMessages() to eliminate package startup messages
 
 ``` r
 library(corrplot)
@@ -211,3 +211,7 @@ abalone_metrics(abalone_train_res, truth = age,
     ## 1 rmse    standard       2.14 
     ## 2 rsq     standard       0.563
     ## 3 mae     standard       1.54
+
+Our predicted estimates were a little high and the *R*<sup>2</sup> value
+ended up being 0.563, which is decent, but a different model may be more
+appropriate.
